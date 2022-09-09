@@ -22,5 +22,3 @@ jobs:
       working-directory: netcore-unit-testing/web-api/
     - name: Build
       run: dotnet build /home/runner/work/unit-testing-aspnetcore-webapi/unit-testing-aspnetcore-webapi/netcore-unit-testing/web-api/web-api/web-api.csproj --no-restore
-    - name: Test
-      run: dotnet test /home/runner/work/unit-testing-aspnetcore-webapi/unit-testing-aspnetcore-webapi/netcore-unit-testing/web-api/web-api-tests/web-api-tests.csproj --no-build --verbosity normal
