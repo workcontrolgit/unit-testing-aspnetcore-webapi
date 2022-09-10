@@ -33,5 +33,5 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
     testAssemblyVer2: |
-        **\YYY.*.Tests.dll
+        **\web-api-tests.dll
         !**\obj\**
