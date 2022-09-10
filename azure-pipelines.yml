@@ -5,6 +5,10 @@
 
 trigger:
 - master
+ stages:
+ - stage: Build
+   jobs:
+   - job: Build
 
 pool:
   vmImage: 'windows-latest'
@@ -36,3 +40,16 @@ steps:
         **\web-api-tests.dll
         !**\obj\**
 - task: PublishBuildArtifacts@1        
+- stage: Deploy
+   jobs:
+  - job: Deploy
+     pool:
+       vmImage: 'vs2017-win2016'
+     steps:
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'BizSpark (924eda9f-8a8d-4c64-b7bb-b06482736fa6)'
+    appType: 'webApp'
+    WebAppName: 'shoppingcart-api'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
