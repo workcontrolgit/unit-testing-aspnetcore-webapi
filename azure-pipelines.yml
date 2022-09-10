@@ -32,3 +32,6 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+    testAssemblyVer2: |
+        **\YYY.*.Tests.dll
+        !**\obj\**
