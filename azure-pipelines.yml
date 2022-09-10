@@ -35,3 +35,4 @@ steps:
     testAssemblyVer2: |
         **\web-api-tests.dll
         !**\obj\**
+- task: PublishBuildArtifacts@1        
