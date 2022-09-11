@@ -37,6 +37,9 @@ steps:
         !**\obj\**
 
 - task: PublishBuildArtifacts@1
+inputs:
+    artifactName: 'drop'
+    pathToPublish: '$(build.artifactStagingDirectory)'
 
 - task: AzureRmWebAppDeployment@4
   inputs:
