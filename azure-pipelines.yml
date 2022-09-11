@@ -43,4 +43,4 @@ steps:
     azureSubscription: 'BizSpark (924eda9f-8a8d-4c64-b7bb-b06482736fa6)'
     appType: 'webApp'
     WebAppName: 'shoppingcart-api'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/_workcontrolgit.unit-testing-aspnetcore-webapi/drop'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
