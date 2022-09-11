@@ -35,12 +35,13 @@ steps:
     testAssemblyVer2: |
         **\web-api-tests.dll
         !**\obj\**
+
 - task: PublishBuildArtifacts@1
     displayName: 'Publish Artifact'
-    inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)''
     ArtifactName: 'drop'
     publishLocation: 'Container'
+
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
