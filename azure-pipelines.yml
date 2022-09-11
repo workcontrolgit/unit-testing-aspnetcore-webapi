@@ -37,9 +37,6 @@ steps:
         !**\obj\**
 
 - task: PublishBuildArtifacts@1
-  inputs:
-    artifactName: 'drop'
-    pathToPublish: '$(Build.DefaultWorkingDirectory)'
 
 - task: AzureRmWebAppDeployment@4
   inputs:
@@ -47,4 +44,4 @@ steps:
     azureSubscription: 'BizSpark (924eda9f-8a8d-4c64-b7bb-b06482736fa6)'
     appType: 'webApp'
     WebAppName: 'shoppingcart-api'
-    packageForLinux: '$(Build.DefaultWorkingDirectory)/**/*.zip'
+    packageForLinux: '$(build.artifactStagingDirectory)\WebApp.zip'
